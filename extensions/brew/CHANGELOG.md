@@ -1,5 +1,10 @@
 # Brew Changelog
 
+## [Fix Custom Brew Path] - 2025-02-28
+
+- Correctly handle the custom Brew executable path preference.  The extension now uses the user-provided path directly, ensuring the correct Brew installation is used.
+
+
 ## [Improvements] - {PR_MERGE_DATE}
 
 - Add a new action to open the Brew formula/cask page in the browser
