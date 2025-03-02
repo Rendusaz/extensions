@@ -107,9 +107,9 @@ export interface InstalledMap {
 
 export const brewPrefix = (() => {
   if (preferences.customBrewPath && preferences.customBrewPath.length > 0) {
-     // Use the directory containing the provided executable path.
-     return path_join(preferences.customBrewPath, "..");
-   }
+    // Use the directory containing the provided executable path.
+    return path_join(preferences.customBrewPath, "..");
+  }
   try {
     return execSync("brew --prefix", { encoding: "utf8" }).trim();
   } catch {
@@ -118,7 +118,10 @@ export const brewPrefix = (() => {
 })();
 
 export const brewPath = (suffix: string) => path_join(brewPrefix, suffix);
-export const brewExecutable = () => preferences.customBrewPath && preferences.customBrewPath.length > 0 ? preferences.customBrewPath : brewPath("bin/brew");
+export const brewExecutable = () =>
+  preferences.customBrewPath && preferences.customBrewPath.length > 0
+    ? preferences.customBrewPath
+    : brewPath("bin/brew");
 
 /// Fetching
 
